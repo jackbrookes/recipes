@@ -14,7 +14,7 @@ for i, recipe in enumerate(CONTENT['recipes']):
 def index():
     return render_template('index.html', recipes = CONTENT["recipes"])
 
-@application.route('/recipes/<slug>/')
+@application.route('/<slug>/')
 def get_recipe(slug):
     for recipe in CONTENT["recipes"]:
         if recipe["slug"] == slug:
