@@ -1,0 +1,14 @@
+{% if recipes %}
+<ul class="recipes">
+    {% for recipe in recipes %}
+        <a href="{{ url_for('get_recipe', slug=recipe.slug) }}">
+            <li>
+                {{ recipe.name }}
+            </li>
+        </a>
+        <div class="spacer">&nbsp;</div>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No recipes!</p>
+{% endif %}
