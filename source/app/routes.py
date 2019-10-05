@@ -9,8 +9,8 @@ with open("content.json") as f:
 for i, recipe in enumerate(CONTENT['recipes']):
     recipe['slug'] = str(i)
 
-@application.route('/')
 @application.route('/index.html')
+@application.route('/')
 def index():
     return render_template('index.html', recipes = CONTENT["recipes"])
 
